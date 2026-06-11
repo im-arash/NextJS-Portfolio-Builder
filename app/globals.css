@@ -1,0 +1,324 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* :root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+} */
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+@layer components {
+  .ProseMirror {
+    min-height: 300px;
+  }
+
+  .ProseMirror p,
+  .ProseMirror h1,
+  .ProseMirror h2,
+  .ProseMirror h3,
+  .ProseMirror h4,
+  .ProseMirror h5,
+  .ProseMirror h6,
+  .rich-content p,
+  .rich-content h1,
+  .rich-content h2,
+  .rich-content h3,
+  .rich-content h4,
+  .rich-content h5,
+  .rich-content h6 {
+    width: 100%;
+  }
+
+  .ProseMirror img,
+  .rich-content img,
+  .prose img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .ProseMirror img[data-align="left"],
+  .rich-content img[data-align="left"],
+  .prose img[data-align="left"] {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+
+  .ProseMirror img[data-align="center"],
+  .rich-content img[data-align="center"],
+  .prose img[data-align="center"] {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .ProseMirror img[data-align="right"],
+  .rich-content img[data-align="right"],
+  .prose img[data-align="right"] {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+  }
+
+  .ProseMirror-selectednode {
+    outline: 2px solid #3b82f6;
+    border-radius: 4px;
+  }
+
+  .ProseMirror .image-resizer {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .ProseMirror .image-resizer[data-align="left"] {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+
+  .ProseMirror .image-resizer[data-align="center"] {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .ProseMirror .image-resizer[data-align="right"] {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+  }
+
+  .rich-content img[containerstyle*="margin: 0px 0px 0px auto"],
+  .prose img[containerstyle*="margin: 0px 0px 0px auto"] {
+    display: block;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+  }
+
+  .rich-content img[containerstyle*="margin: 0px auto"],
+  .prose img[containerstyle*="margin: 0px auto"] {
+    display: block;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .rich-content img[containerstyle*="margin: 0px auto 0px 0px"],
+  .prose img[containerstyle*="margin: 0px auto 0px 0px"] {
+    display: block;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+
+  /*list*/
+
+  .ProseMirror ul,
+  .rich-content ul,
+  .prose ul {
+    list-style-type: disc !important;
+    padding-left: 1.5rem !important;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .ProseMirror ol,
+  .rich-content ol,
+  .prose ol {
+    list-style-type: decimal !important;
+    padding-left: 1.5rem !important;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .ProseMirror li,
+  .rich-content li,
+  .prose li {
+    display: list-item !important;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .ProseMirror li p,
+  .rich-content li p,
+  .prose li p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  /* LEFT aligned lists */
+  .ProseMirror ul:has(li[style*="text-align: left"]),
+  .ProseMirror ul:has(li p[style*="text-align: left"]),
+  .rich-content ul:has(li[style*="text-align: left"]),
+  .rich-content ul:has(li p[style*="text-align: left"]),
+  .prose ul:has(li[style*="text-align: left"]),
+  .prose ul:has(li p[style*="text-align: left"]),
+  .ProseMirror ol:has(li[style*="text-align: left"]),
+  .ProseMirror ol:has(li p[style*="text-align: left"]),
+  .rich-content ol:has(li[style*="text-align: left"]),
+  .rich-content ol:has(li p[style*="text-align: left"]),
+  .prose ol:has(li[style*="text-align: left"]),
+  .prose ol:has(li p[style*="text-align: left"]) {
+    width: fit-content;
+    margin-left: 0;
+    margin-right: auto;
+    text-align: left;
+    list-style-position: outside;
+  }
+
+  /* CENTER aligned lists */
+  .ProseMirror ul:has(li[style*="text-align: center"]),
+  .ProseMirror ul:has(li p[style*="text-align: center"]),
+  .rich-content ul:has(li[style*="text-align: center"]),
+  .rich-content ul:has(li p[style*="text-align: center"]),
+  .prose ul:has(li[style*="text-align: center"]),
+  .prose ul:has(li p[style*="text-align: center"]),
+  .ProseMirror ol:has(li[style*="text-align: center"]),
+  .ProseMirror ol:has(li p[style*="text-align: center"]),
+  .rich-content ol:has(li[style*="text-align: center"]),
+  .rich-content ol:has(li p[style*="text-align: center"]),
+  .prose ol:has(li[style*="text-align: center"]),
+  .prose ol:has(li p[style*="text-align: center"]) {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    list-style-position: outside;
+  }
+
+  /* RIGHT aligned lists */
+  .ProseMirror ul:has(li[style*="text-align: right"]),
+  .ProseMirror ul:has(li p[style*="text-align: right"]),
+  .rich-content ul:has(li[style*="text-align: right"]),
+  .rich-content ul:has(li p[style*="text-align: right"]),
+  .prose ul:has(li[style*="text-align: right"]),
+  .prose ul:has(li p[style*="text-align: right"]),
+  .ProseMirror ol:has(li[style*="text-align: right"]),
+  .ProseMirror ol:has(li p[style*="text-align: right"]),
+  .rich-content ol:has(li[style*="text-align: right"]),
+  .rich-content ol:has(li p[style*="text-align: right"]),
+  .prose ol:has(li[style*="text-align: right"]),
+  .prose ol:has(li p[style*="text-align: right"]) {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: 0;
+    text-align: left;
+    list-style-position: outside;
+  }
+}
